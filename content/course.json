@@ -1,0 +1,240 @@
+{
+ "maruzalar": [
+  {
+   "n": 1,
+   "title": "Yoʻl xoʻjaligi sohasida muhandislik loyihalarini boshqarishga kirish",
+   "sections": [
+    "1.1. Yoʻl xoʻjaligida muhandislik loyihalarni boshqarishning maqsad va vazifalari",
+    "1.2. Transport infratuzilmasini rivojlantirishda loyihalarni samarali boshqarishning roli",
+    "1.3. Tarmoqni rivojlantirish istiqbollari"
+   ]
+  },
+  {
+   "n": 2,
+   "title": "Muhandislik loyihalarini boshqarish asoslari",
+   "sections": [
+    "2.1. Loyihaning hayot sikli",
+    "2.2. Loyihalar tasnifi",
+    "2.3. Loyiha ishtirokchilari",
+    "2.4. Loyihani boshqarish konsepsiyasi doirasidagi boshqaruv obyekti va subyekti",
+    "2.5. Loyihani boshqarish jarayonlari: boshlash, rejalashtirish, bajarish, nazorat qilish va yakunlash jarayonlari",
+    "2.6. Loyihani boshqarish standartlari"
+   ]
+  },
+  {
+   "n": 3,
+   "title": "Yoʻl qurilishi loyihasining hayot sikli",
+   "sections": [
+    "3.1. Loyihaning boshlanishi",
+    "3.2. Rejalashtirish",
+    "3.3. Amalga oshirish (qurilish)",
+    "3.4. Monitoring va nazorat",
+    "3.5. Obyektni tugatish va topshirish"
+   ]
+  },
+  {
+   "n": 4,
+   "title": "Loyihani rejalashtirish",
+   "sections": [
+    "4.1. Rejalashtirish jarayonlari, ularning loyihani boshqarish jarayonlaridagi oʻrni va roli",
+    "4.2. Reja turlari (strategik, joriy, operativ)",
+    "4.3. Asosiy va yordamchi rejalashtirish tartiblari",
+    "4.4. Rejalashtirish tamoyillari",
+    "4.5. Loyiha tarkibini rejalashtirish"
+   ]
+  },
+  {
+   "n": 5,
+   "title": "Loyiha ishtirokchilari",
+   "sections": [
+    "5.1. Buyurtmachi (davlat yoki xususiy)",
+    "5.2. Bosh pudratchilar va subpudratchilar",
+    "5.3. Loyihalash tashkilotlari",
+    "5.4. Nazorat qiluvchi organlar (davlat va texnik nazorat)",
+    "5.5. Davlat va mahalliy hokimiyat organlari"
+   ]
+  },
+  {
+   "n": 6,
+   "title": "Asosiy loyiha hujjatlari",
+   "sections": [
+    "6.1. Loyiha-smeta hujjatlari",
+    "6.2. Ish bajarish grafigi",
+    "6.3. Shartnomalar va bitimlar",
+    "6.4. Risklar va risklarni boshqarish rejalari"
+   ]
+  },
+  {
+   "n": 7,
+   "title": "Loyiha hujjatlari boʻlimlarining tarkibi va uning mazmuniga qoʻyiladigan talablar",
+   "sections": [
+    "7.1. Loyiha hujjatlari boʻlimlarining tarkibi",
+    "7.2. Sanoat va noishlab chiqarish maqsadidagi kapital qurilish loyihalari boʻyicha loyiha hujjatlari boʻlimlarining tarkibi va ushbu boʻlimlarning tarkibiga qoʻyiladigan talablar",
+    "7.3. Kapital qurilishdagi chiziqli obyektlar loyihalari uchun loyiha hujjatlari boʻlimlarining tarkibi va ushbu boʻlimlarning tarkibiga qoʻyiladigan talablar"
+   ]
+  },
+  {
+   "n": 8,
+   "title": "Moliyalashtirish va budjetlashtirish",
+   "sections": [
+    "8.1. Moliyalashtirish manbalari (davlat dasturlari, konsessiyalar, xususiy investitsiyalar)",
+    "8.2. Budjetni rejalashtirish va xarajatlarni nazorat qilish",
+    "8.3. Audit va hisobot"
+   ]
+  },
+  {
+   "n": 9,
+   "title": "Risklarni boshqarish",
+   "sections": [
+    "9.1. Risklarni identifikatsiyalash va tasniflash",
+    "9.2. Risklarni baholash va minimallashtirish usullari",
+    "9.3. Yoʻl loyihalaridagi odatiy risklarga misollar (ob-havo sharoiti, taʼminotning uzilishi, norozilik, huquqiy qiyinchiliklar)"
+   ]
+  },
+  {
+   "n": 10,
+   "title": "Loyihani boshqarishning tashkiliy tuzilmalari",
+   "sections": [
+    "10.1. Tashkiliy boshqaruv tuzilmasi va loyiha ishtirokchilari oʻrtasidagi munosabatlar tizimi",
+    "10.2. Loyihani boshqarish tuzilmalari",
+    "10.3. Loyiha ishtirokchilarining funksiyalari"
+   ]
+  },
+  {
+   "n": 11,
+   "title": "Loyiha jamoasi boshqaruvi",
+   "sections": [
+    "11.1. Loyiha jamoasini yaratish",
+    "11.2. Loyiha jamoasini boshqarish",
+    "11.3. Boshqaruv, yetakchilik",
+    "11.4. Mojarolar",
+    "11.5. Loyiha ofisi"
+   ]
+  },
+  {
+   "n": 12,
+   "title": "Loyihani nazorat qilish va tartibga solish",
+   "sections": [
+    "12.1. Nazoratning maqsadi va vazifalari",
+    "12.2. Nazorat usullari",
+    "12.3. Nazorat tizimiga qoʻyiladigan talablar",
+    "12.4. Samarali nazorat tizimini qurish tamoyillari",
+    "12.5. Nazorat jarayonlari",
+    "12.6. Oʻzgarishlarni boshqarish texnologiyasi"
+   ]
+  },
+  {
+   "n": 13,
+   "title": "Loyiha xarajatlarini nazorat qilish",
+   "sections": [
+    "13.1. Loyiha xarajatlarini nazorat qilish",
+    "13.2. Anʼanaviy va oʻzlashtirilgan hajm usullari",
+    "13.3. Loyihaning joriy holatini baholash",
+    "13.4. Xarajatlar boʻyicha hisobot",
+    "13.5. Oʻzgarishlarni bashorat qilish"
+   ]
+  },
+  {
+   "n": 14,
+   "title": "Kommunikatsiyalarni boshqarish va loyihani yakunlash",
+   "sections": [
+    "14.1. Kommunikatsiyalarni rejalashtirish",
+    "14.2. Axborotni tarqatish",
+    "14.3. Ijro toʻgʻrisidagi hisobot",
+    "14.4. Obyektni qabul qilish-topshirishni boshqarish",
+    "14.5. Loyihani yopish",
+    "14.6. Loyiha hujjatlarini hisobga olish va saqlash",
+    "14.7. Qogʻoz shaklda bajarilgan hujjatlarni hisobga olish va muomalaga kiritish boʻyicha shtamplar namunalari"
+   ]
+  },
+  {
+   "n": 15,
+   "title": "Zamonaviy tendentsiyalar va texnologiyalar",
+   "sections": [
+    "15.1. ALT va raqamli modellar: trassa, profil, koʻndalang kesim",
+    "15.2. \"Yashil yoʻllar\": ekotizim yondashuvlari, ekologik loyihalash",
+    "15.3. Yangi materiallar: superpave, RCC, barqaror qoplamalar"
+   ]
+  }
+ ],
+ "amaliy": [
+  {
+   "id": "01",
+   "label": "1",
+   "title": "Loyiha maqsadlarini aniqlash va shakllantirish",
+   "titleUpper": "LOYIHA MAQSADLARINI ANIQLASH VA SHAKLLANTIRISH"
+  },
+  {
+   "id": "02",
+   "label": "2",
+   "title": "Manfaatdor tomonlar tahlili. Loyihaning tashkiliy tuzilmasini ishlab chiqish",
+   "titleUpper": "MANFAATDOR TOMONLAR TAHLILI. LOYIHANING TASHKILIY TUZILMASINI ISHLAB CHIQISH"
+  },
+  {
+   "id": "03",
+   "label": "3",
+   "title": "Yo‘l loyihasi uchun ishlarni taqsimlash tuzilmasini (WBS) ishlab chiqish",
+   "titleUpper": "YO‘L LOYIHASI UCHUN ISHLARNI TAQSIMLASH TUZILMASINI (WBS) ISHLAB CHIQISH"
+  },
+  {
+   "id": "04",
+   "label": "4",
+   "title": "Tarmoq jadvalini yaratish",
+   "titleUpper": "TARMOQ JADVALINI YARATISH"
+  },
+  {
+   "id": "05",
+   "label": "5-6",
+   "title": "Dastlabki tahlil: yer ishlari hajmlarini hisoblash",
+   "titleUpper": "DASTLABKI TAHLIL: ER ISHLARI HAJMLARINI HISOBLASH"
+  },
+  {
+   "id": "07",
+   "label": "7",
+   "title": "Gantt diagrammasini qurish",
+   "titleUpper": "GANTT DIAGRAMMASINI QURISH"
+  },
+  {
+   "id": "08",
+   "label": "8",
+   "title": "Resurs rejasini shakllantirish: materiallar, mashina va mexanizmlar, odamlar",
+   "titleUpper": "RESURS REJASINI SHAKLLANTIRISH: MATERIALLAR, MASHINA VA MEXANIZMLAR, ODAMLAR"
+  },
+  {
+   "id": "09",
+   "label": "9",
+   "title": "Resurslarni rejalashtirish va boshqarish",
+   "titleUpper": "RESURSLARNI REJALASHTIRISH VA BOSHQARISH"
+  },
+  {
+   "id": "10",
+   "label": "10",
+   "title": "Amalga oshirish monitoringi va nazorati. Qabul qilingan qiymat usuli",
+   "titleUpper": "AMALGA OSHIRISH MONITORINGI VA NAZORATI. QABUL QILINGAN QIYMAT USULI"
+  },
+  {
+   "id": "11",
+   "label": "11",
+   "title": "Risklarni baholash: risk matritsasi va harakat qilish rejalarini ishlab chiqish",
+   "titleUpper": "RISKLARNI BAHOLASH: RISK MATRITSASI VA HARAKAT QILISH REJALARINI ISHLAB CHIQISH"
+  },
+  {
+   "id": "12",
+   "label": "12",
+   "title": "Muhandislik loyihalarida nizolarni boshqarish",
+   "titleUpper": "MUHANDISLIK LOYIHALARIDA NIZOLARNI BOSHQARISH"
+  },
+  {
+   "id": "13",
+   "label": "13",
+   "title": "Loyihani yakunlash va tahlil qilish",
+   "titleUpper": "LOYIHANI YAKUNLASH VA TAHLIL QILISH"
+  },
+  {
+   "id": "14",
+   "label": "14-15",
+   "title": "iRAP tizimi orqali ekspluatatsiyadagi yo‘llarni baholash",
+   "titleUpper": "iRAP TIZIMI ORQALI EKSPLUATATSIYADAGI YO‘LLARNI BAHOLASH"
+  }
+ ]
+}
