@@ -207,7 +207,7 @@ function practicalRow(P){
   const mats=matsFor("A"+(+P.id)).length;
   return h("li",null,h("span",{class:"n",text:P.label}),
     h("span",{class:"t"},h("a",{href:"#amaliy-"+P.id,text:P.title})),
-    h("span",{class:"acts"},mats?h("span",{class:"pill acc",text:"Material"}):null,P.id==="04"?h("span",{class:"pill crit",text:"Trenajyor"}):null));
+    h("span",{class:"acts"},mats?h("span",{class:"pill acc",text:"Material"}):null,hasTrainer(P.id)?h("span",{class:"pill crit",text:"Trenajyor"}):null));
 }
 function viewHome(){
   const intro=h("div",{class:"prose",html:"<p class='muted'>Yuklanmoqda…</p>"});
@@ -289,10 +289,10 @@ async function viewPractical(id){
     h("div",{class:"page-head"},
       h("span",{class:"eyebrow",text:`${P.label}-amaliy mashg‘ulot`}),
       h("h1",{text:P.title}),
-      id==="04"?h("div",{class:"row"},h("button",{class:"btn primary small",type:"button",text:"Trenajyorga o‘tish",onclick:()=>$("#trainer").scrollIntoView({behavior:reduce()?"auto":"smooth"})})):null),
+      hasTrainer(id)?h("div",{class:"row"},h("button",{class:"btn primary small",type:"button",text:"Trenajyorga o‘tish",onclick:()=>$("#trainer").scrollIntoView({behavior:reduce()?"auto":"smooth"})})):null),
     matsBlock("A"+(+id)),
     h("div",{class:"stack",style:"min-width:0"},body,
-      id==="04"?trainer():null,
+      id==="04"?trainer():(window.TRAINERS&&window.TRAINERS[id]?window.TRAINERS[id](appApi()):null),
       h("div",{class:"pager"},
         prev?h("a",{class:"btn",href:"#amaliy-"+prev.id,text:"← "+prev.label+"-mashg‘ulot"}):h("span"),
         next?h("a",{class:"btn",href:"#amaliy-"+next.id,text:next.label+"-mashg‘ulot →"}):h("span")))));
@@ -312,10 +312,15 @@ function gate(){
   if(hasId()) return h("p",{class:"muted",style:"font-size:.9rem"},"Talaba: ",h("b",{text:S.profile.fio}),` · ${S.profile.guruh}-guruh  `,h("a",{href:"#natijalar",text:"o‘zgartirish"}));
   return h("div",{class:"notice warn"},"Natija jurnalga tushishi uchun avval ",h("a",{href:"#natijalar",text:"familiya, ism va guruhingizni kiriting"}),".");
 }
+const PR_KEYS=[["A4","CPM"],["A5","Yer ishlari"],["A7","Gantt"],["A10","EVM"],["A11","Risklar"]];
 function attemptLabel(a){
-  if(a.type==="test"){ const L=S.course&&lecture(+a.topic); return `Test · ${a.topic}-mavzu`+(L?"":""); }
+  if(a.type==="test") return `Test · ${a.topic}-mavzu`;
+  if(a.type==="trainer"){ const k=PR_KEYS.find(x=>x[0]===a.key); return `Trenajyor: ${k?k[1]:a.key} (${String(a.key).slice(1)}-amaliy)`; }
   return "CPM trenajyor (4-amaliy)";
 }
+function hasTrainer(id){ return id==="04"||!!(window.TRAINERS&&window.TRAINERS[id]); }
+function appApi(){ return {h,$,$$,gate,hasId,go,submitAttempt,sendNote,newId,profile:()=>S.profile,device:()=>S.device}; }
+function prVal(r,k){ const p=r.pr||{}; if(p[k]!==undefined&&p[k]!=="") return p[k]; return k==="A4"?r.cpm:""; }
 function viewResults(){
   const fio=h("input",{type:"text",id:"id-fio",maxlength:"80",autocomplete:"name",placeholder:"Masalan: Karimov Jasur",value:S.profile.fio||""});
   const gr=h("input",{type:"text",id:"id-guruh",maxlength:"20",placeholder:"Masalan: 312-21",value:S.profile.guruh||""});
@@ -547,9 +552,9 @@ function viewTeacher(){
     if(!list.length){ tbl.replaceChildren(h("p",{class:"empty",text:"Hozircha natijalar yo‘q."})); return; }
     const T=lectures().map(L=>L.n);
     tbl.replaceChildren(h("table",{class:"t mx"},
-      h("thead",null,h("tr",null,h("th",{class:"sticky-col",text:"Talaba"}),h("th",{text:"Guruh"}),...T.map(t=>h("th",{class:"num",title:lecture(t).title,text:"T"+t})),h("th",{class:"num",text:"CPM"}),h("th",{text:"Oxirgi"}))),
+      h("thead",null,h("tr",null,h("th",{class:"sticky-col",text:"Talaba"}),h("th",{text:"Guruh"}),...T.map(t=>h("th",{class:"num",title:lecture(t).title,text:"T"+t})),...PR_KEYS.map(([k,n])=>h("th",{class:"num",title:n,text:k})),h("th",{text:"Oxirgi"}))),
       h("tbody",null,list.map(r=>h("tr",null,h("td",{class:"sticky-col",style:"white-space:nowrap",text:r.fio}),h("td",{class:"mono",text:r.guruh}),
-        ...T.map(t=>cell((r.tests||{})[t])),cell(r.cpm),h("td",{class:"mono",style:"white-space:nowrap;font-size:.82rem",text:r.last?fmtDate(r.last):"—"}))))));
+        ...T.map(t=>cell((r.tests||{})[t])),...PR_KEYS.map(([k])=>cell(prVal(r,k))),h("td",{class:"mono",style:"white-space:nowrap;font-size:.82rem",text:r.last?fmtDate(r.last):"—"}))))));
   }
   async function load(){
     if(!SCRIPT_URL){ msg.textContent="Sayt Google-jadvalga ulanmagan: config.js faylida SCRIPT_URL ni to‘ldiring."; return; }
@@ -570,14 +575,14 @@ function viewTeacher(){
   const csv=h("button",{class:"btn",type:"button",text:"CSV yuklab olish",onclick:()=>{
     const q=v=>`"${String(v==null?"":v).replace(/"/g,'""')}"`;
     const T=lectures().map(L=>L.n);
-    const lines=[["Talaba","Guruh",...T.map(t=>"T"+t+" %"),"CPM %","Urinishlar","Oxirgi faollik"].map(q).join(";")]
-      .concat(filtered().map(r=>[r.fio,r.guruh,...T.map(t=>(r.tests||{})[t]??""),r.cpm,r.n,r.last?fmtDate(r.last):""].map(q).join(";")));
+    const lines=[["Talaba","Guruh",...T.map(t=>"T"+t+" %"),...PR_KEYS.map(([k,n])=>`${k} ${n} %`),"Urinishlar","Oxirgi faollik"].map(q).join(";")]
+      .concat(filtered().map(r=>[r.fio,r.guruh,...T.map(t=>(r.tests||{})[t]??""),...PR_KEYS.map(([k])=>prVal(r,k)),r.n,r.last?fmtDate(r.last):""].map(q).join(";")));
     const a=h("a",{href:URL.createObjectURL(new Blob(["﻿"+lines.join("\r\n")],{type:"text/csv;charset=utf-8"})),download:"jurnal.csv"});
     document.body.append(a); a.click(); a.remove();
   }});
   body.append(kpis,h("div",{class:"row between"},h("label",{class:"field",style:"width:min(240px,100%)"},"Guruh",sel),h("div",{class:"row"},h("button",{class:"btn",type:"button",text:"Yangilash",onclick:load}),csv)),tbl);
   app().replaceChildren(h("section",{class:"view"},
-    h("div",{class:"stack"},h("h2",{text:"O‘qituvchi paneli"}),h("p",{class:"muted",text:"T1–T15 — mavzular bo‘yicha testlar, CPM — 4-amaliy mashg‘ulot trenajyori. Batafsil ma’lumotlar Google-jadvalning «Urinishlar» varag‘ida."})),
+    h("div",{class:"stack"},h("h2",{text:"O‘qituvchi paneli"}),h("p",{class:"muted",text:"T1–T15 — mavzular bo‘yicha testlar; A4, A5, A7, A10, A11 — amaliy mashg‘ulotlar trenajyorlari (A4 — CPM, A5 — yer ishlari, A7 — Gantt, A10 — EVM, A11 — risklar). Batafsil ma’lumotlar Google-jadvalning «Urinishlar» varag‘ida."})),
     form, body));
   if(key.value) load();
 }
